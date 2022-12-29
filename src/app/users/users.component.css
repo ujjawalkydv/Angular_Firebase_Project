@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+  }
+
+  th.mat-header-cell {
+    text-align: center !important;
+  }
+
+  .head {
+    color: royalblue;
+    font-size: 30px;
+    font-weight: 450;
+    text-align: justify;
+
+  }
+
+  .spinner {
+    align-items: center;
+    position:fixed;
+    top:50%;
+    left:50%
+  }
+
+
+
+

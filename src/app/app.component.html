@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+        <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+      </button >
+    
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          
+          <a routerLink="/home" class="navbar-brand">Home</a>
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="/users" role="button">Users</a></li>
+        <li routerLinkActive="active"><a routerLink="/winners" role="button">Winners</a></li>
+        <li routerLinkActive="active"><a routerLink="/toppers" role="button">Toppers</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active">
+          
+          <a routerLink="create-user" role="button">Create User  </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col md 12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="footer">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+
+      <p class=text-center>© 2022
+        Ujjawal_Yadav
+      </p>
+    
+  </div>
+</div> -->
+
+
+
+
+

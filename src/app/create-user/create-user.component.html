@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 ">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" style="text-align:center; color: blue;">
+                    <h2>Register a User</h2>
+                </div>
+            </div>
+            <form 
+            
+             #f="ngForm">
+                <div 
+                id="user-data" 
+                ngModelGroup="userData" 
+                #userData="ngModelGroup">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" 
+                        id="username" 
+                        class="form-control" 
+                        ngModel 
+                        name="username" 
+                        required
+                        #username>
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input 
+                        type="number" 
+                        class="form-control" 
+                        id="age" 
+                        ngModel 
+                        name="age" 
+                        required
+                        #age>
+                    </div>
+                    <div class="form-group">
+                        <label>Score</label>
+                        <input type="number" 
+                        class="form-control" 
+                        id="score" 
+                        ngModel 
+                        name="score" 
+                        required
+                        #score>
+                    </div>
+
+                    <div class="form-group">
+                        <button 
+                        class="btn btn-primary " 
+                        type="submit" 
+                        [disabled]="!f.valid"
+                        (click)="onCreateUser(username, age, score)">
+                        Create User</button>
+                        &nbsp;
+                        <button 
+                        class="btn btn-info " 
+                        type="submit" 
+                        disabled
+                        (click)="onSaveUser()">
+                        Save User on DB</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-5 col-md-offset-2">
+            <h2 style="text-align: center; color: blue;"> {{ dataTitle }}</h2>
+            <table class="table ">
+                <thead class="thead-dark" >
+                    <tr class="success" >
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr class="active" *ngFor="let user of users; index as i ">
+                        <th scope="row"> {{i+1}}</th>
+                        <td>{{ user.username}}</td>
+                        <td>{{user.age }}</td>
+                        <td>{{user.score }}</td>
+                        <td (click)="onDeleteUser(i)"> <a role="button" class="text-danger"> <span class="glyphicon">&#xe020;</span> </a> </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <hr>
+</div>
